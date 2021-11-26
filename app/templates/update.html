@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="hidden" name="id" value="{{ user.id }}">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nombre" placeholder="nombre" value="{{ user.nombre }}" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="apellido" cols="100"
+                                      placeholder="apellido" required> {{ user.apellido }} </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" name="email" cols="100"
+                                      placeholder="Email" required> {{ user.email }} </textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">
+                            Actualizar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
